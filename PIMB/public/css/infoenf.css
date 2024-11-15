@@ -1,0 +1,102 @@
+.doble-columna{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5rem;
+    padding: 2.5rem 0 2.5rem 0;
+}
+
+.card-efermedad{
+    width: 696px;
+    height: 575px;
+    border-radius: 18px;
+    padding: 4rem 2rem;
+    background-color: #CDF9FF6E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-efermedad h1{
+    font-size: 40px;
+    color: #398F9D;
+}
+
+.content{
+    font-size: 24px;
+}
+
+.doble-columna img{
+    height: auto;
+    width: 465px;
+}
+
+.consejos-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5rem;
+    padding: 2.5rem 0 2.5rem 0;
+}
+
+.card-consejos{
+    width: 350px;
+    height: 420px;
+    border-radius: 18px;
+    padding: 1rem 2rem;
+    background-color: #CDF9FF6E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hconsejos {
+    text-align: center;
+}
+
+.tconsejos {
+    text-align: justify;
+}
+
+
+.logged-message{
+    padding:  2.5rem 8rem;
+}
+
+.logged-message h1{
+    font-size: 40px;
+    color: #398F9D;
+}
+
+.logged-message p{
+    padding-top: 2rem;
+    font-size: 24px;
+    text-align: justify;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px; 
+}
+
+.btn-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 32px;
+    font-weight: 500;
+    color: #CDF9FF;
+    background-color: #398F9D;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3; 
+}
+
+.btn-custom:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); 
+}

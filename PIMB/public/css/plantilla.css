@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1;
+    background: #f5f5f5;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Asegura que los elementos estén bien distribuidos */
+    align-items: center;
+    background-color: #398F9D;
+    padding: 10px 30px; /* Da suficiente espacio lateral para que no se corten los elementos */
+    color: #ffffff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    white-space: nowrap; /* Previene cortes de texto innecesarios */
+}
+
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    flex-shrink: 1; /* Permite que este contenedor se ajuste si es necesario */
+}
+
+.logo {
+    max-width: 50px; /* Mantén el logo compacto */
+    height: auto;
+    margin-right: 10px;
+}
+
+.login-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem; /* Ajusta el tamaño de texto si es muy grande */
+    white-space: nowrap; /* Evita que se corte el texto o se envíe a otra línea */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto no cabe */
+    padding-right: 50px;
+}
+
+.login-link:hover{
+    color: aquamarine;
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column; /* Pasa los elementos uno debajo del otro si la pantalla es muy estrecha */
+        align-items: flex-start;
+    }
+
+    .login-link {
+        margin-top: 10px; /* Asegúrate de que quede visible */
+    }
+}
+
+
+main {
+    width: 100%;
+    margin-top: 120px; /* Ajusta el espacio para el header fijo */
+    padding: 20px;
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+footer {
+    width: 100%; /* Asegura que el footer ocupe el ancho completo del viewport */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    margin: 0; /* Elimina cualquier margen inesperado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #398F9D;
+    padding: 20px 40px;
+    color: white;
+    position: relative;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+footer h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+footer h5 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+footer li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
