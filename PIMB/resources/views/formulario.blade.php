@@ -13,9 +13,9 @@
     <br><br>
     <div class="form-container-wrapper">
     <div class="form-container">
-        <form action="">
+        <form action="{{ route('rutaEnviarTest') }}" method="POST">
+        @csrf
         <div class="form-title">Test de salud mental</div>
-        
         <x-pregunta
         numero="1"
         texto="¿Cómo describirías tu nivel de energía en los últimos meses?"
