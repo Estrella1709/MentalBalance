@@ -13,10 +13,9 @@ class controladorREG extends Controller
 
     public function procesarREG(ValidadorRegistroG $request)
     {
-        // Los datos validados se pueden obtener así:
         $validated = $request->validated();
         
-        // Puedes agregar la lógica de registro aquí
         return redirect()->back()->with('success', 'Registro exitoso');
     }
 }
+
