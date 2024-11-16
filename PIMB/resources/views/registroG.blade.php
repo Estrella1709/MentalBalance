@@ -17,35 +17,61 @@
                     <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo">
                 </div>
             </div>
-            <form action="#" method="post">
+            <form action="{{ route('rutaProcesarRegistroGeneral') }}" method="post">
+                @csrf
                 <div class="form-group">
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="text" placeholder="Apellido Paterno" required>
-                    <input type="text" placeholder="Apellido Materno" required>
+                    <input type="text" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}">
+                    @error('nombre')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+
+                    <input type="text" name="apellido_paterno" placeholder="Apellido Paterno" value="{{ old('apellido_paterno') }}">
+                    @error('apellido_paterno')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+
+                    <input type="text" name="apellido_materno" placeholder="Apellido Materno" value="{{ old('apellido_materno') }}">
+                    @error('apellido_materno')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Correo electrónico" required>
-                    <input type="text" placeholder="Teléfono" required>
-                    <input type="date" placeholder="Fecha de nacimiento" required>
+                    <input type="text" name="email" placeholder="Correo electrónico" value="{{ old('email') }}">
+                    @error('email')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+
+                    <input type="text" name="telefono" placeholder="Teléfono" value="{{ old('telefono') }}">
+                    @error('telefono')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+
+                    <input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento" value="{{ old('fecha_nacimiento') }}">
+                    @error('fecha_nacimiento')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Contraseña" required>
-                    <input type="password" placeholder="Confirmar contraseña" required>
+                    <input type="password" name="password" placeholder="Contraseña">
+                    @error('password')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+
+                    <input type="password" name="password_confirmation" placeholder="Confirmar contraseña">
                 </div>
                 <div class="user-type">
                     <label><h4>Tipo usuario</h4></label>
-                    <label><input type="radio" name="user-type" value="medico"> Médico</label>
-                    <label><input type="radio" name="user-type" value="paciente"> Paciente</label>
+                    <label><input type="radio" name="user-type" value="medico" {{ old('user-type') == 'medico' ? 'checked' : '' }}> Médico</label>
+                    <label><input type="radio" name="user-type" value="paciente" {{ old('user-type') == 'paciente' ? 'checked' : '' }}> Paciente</label>
+                    @error('user-type')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="buttons">
-                    <a href="#" class="login-link">¿Ya tienes cuenta? Inicia sesión</a>
-                    <button type="submit">Ingresar</button>   
+                    <a href="#" class="login-link">&#191;Ya tienes cuenta? Inicia sesión</a>
+                    <button type="submit">Registrar</button>   
                 </div>
-                
             </form>
             
         </div>

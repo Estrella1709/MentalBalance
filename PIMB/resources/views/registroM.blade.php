@@ -15,10 +15,23 @@
                 <img src="{{ asset('img/logo.png')}}" alt="Logo" class="logo">
             </div>
             <h2>Registro</h2>
-            <form action="#" method="post">
-                <input type="text" placeholder="Cédula Profesional" required>
-                <input type="text" placeholder="Especialidad" required>
-                <button type="submit">Ingresar</button>
+            <form action="{{ route('rutaProcesarRegistroMedico') }}" method="post">
+                @csrf
+                <div class="form-group">
+                    <input type="text" name="cedula_profesional" placeholder="Cédula Profesional" value="{{ old('cedula_profesional') }}">
+                    @error('cedula_profesional')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input type="text" name="especialidad" placeholder="Especialidad" value="{{ old('especialidad') }}">
+                    @error('especialidad')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="buttons">
+                    <button type="submit">Registrar</button>   
+                </div>
             </form>
             <a href="#" class="register-link">¿Ya tienes cuenta? Inicia Sesión</a>
         </div>

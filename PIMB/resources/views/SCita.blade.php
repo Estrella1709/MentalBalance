@@ -5,7 +5,7 @@
     <div class="cita-container">
 
         <div class="doble-columna">
-
+            
             <div class="registro-cita">
                 <h1>Registra tu cita</h1>
 

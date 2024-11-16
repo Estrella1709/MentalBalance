@@ -16,9 +16,11 @@ Route::post('/IS', [controladorIS::class, 'procesarIS'])->name('rutaProcesarInic
 
 //Rutas de Registro General
 Route::get('/registroG', [controladorREG::class,'registroG'])->name('rutaRegistroGeneral');
+Route::post('/registroGV', [controladorREG::class, 'procesarREG'])->name('rutaProcesarRegistroGeneral');
 
 //Rutas de Registro Medico
 Route::get('/registroM', [controladorREM::class,'registroM'])->name('rutaRegistroMedico');
+Route::post('/registroMV', [controladorREM::class, 'procesarREM'])->name('rutaProcesarRegistroMedico');
 
 //Rutas de Home
 Route::get('/', [controladorHome::class,'home'])->name('rutaHome');
@@ -27,6 +29,8 @@ Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
 
 //Rutas de Formulario
 Route::get('/formulario', [controladorForm::class,'formulario'])->name('rutaFormulario');
+Route::post('/enviarTest', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
+
 
 //Rutas de Directorio
 Route::get('/directorio', [controladorDirectorio::class,'directorio'])->name('rutaDirectorio');
