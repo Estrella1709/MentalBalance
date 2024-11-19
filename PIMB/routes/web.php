@@ -25,12 +25,9 @@ Route::post('/registroMV', [controladorREM::class, 'procesarREM'])->name('rutaPr
 //Rutas de Home
 Route::get('/', [controladorHome::class,'home'])->name('rutaHome');
 
-Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
-
 //Rutas de Formulario
 Route::get('/formulario', [controladorForm::class,'formulario'])->name('rutaFormulario');
 Route::post('/enviarTest', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
-
 
 //Rutas de Directorio
 Route::get('/directorio', [controladorDirectorio::class,'directorio'])->name('rutaDirectorio');
@@ -44,3 +41,4 @@ Route::get('/ansiedad', [controladorInfoEM::class,'ansiedad'])->name('rutaInfoAn
 Route::get('/bipolaridad', [controladorInfoEM::class,'bipolaridad'])->name('rutaInfoBipolaridad');
 Route::get('/tdah', [controladorInfoEM::class,'tdah'])->name('rutaInfoTDAH');
 
+Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
