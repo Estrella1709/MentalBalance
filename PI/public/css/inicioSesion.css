@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #1c3e57;
+    --secondary-color: #4a8c93; 
+    --accent-color: #bac6c2; 
+    --text-color: #1c3e57; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bac6c2;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+
+.header-section {
+    background-color: var(--primary-color);
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 20px; 
+}
+
+.header-section img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; 
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.system-title {
+    color: #ffffff;
+    font-size: 1.2rem; 
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.login-container {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: #bac6c2;
+    max-width: 800px;
+    margin: 10px auto; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 150px;
+    margin-left: 10px;
+}
+
+.form-section {
+    flex-grow: 1;
+    text-align: right;
+    margin-left: 20px; 
+    align-self: flex-start;
+}
+
+.form-label {
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+input.form-control {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
+    font-size: 1rem;
+    height: 30px; 
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.button-section {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem; 
+    margin-right: 10px;
+}
+
+.btn-reset {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem; 
+}
+
+.btn-login:hover {
+    background-color: #16354b;
+}
+
+.btn-reset:hover {
+    background-color: #3a7a80;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.vh-100 {
+    height: 100vh; 
+}
+
+
+body, input, button {
+    font-size: 1rem;
+}
+
+input.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+}
+
+

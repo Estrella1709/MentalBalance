@@ -1,0 +1,332 @@
+:root {
+    --primary-color: #0B0E1D;  
+    --secondary-color: #4C5B88; 
+    --accent-color: #0a3444;    /*6E7AA1*/
+    --background-color: #e0dece;
+    --highlight-color: #FFFFFF; 
+
+    --navbar-footer-background-color: #bac6c2;
+    --highlight-color: #2e424c; 
+
+}
+
+.navbar-custom {
+    background-color: var(--navbar-footer-background-color);
+    color: #c5b295;
+    position: fixed !important; /*Hace que la barra este fija, el important es para que no se reescriba la propiedad con otros modals*/
+    z-index: 1500;
+    top: 0; /* Pegada a la parte superior */
+    width: 100%; /* Abarca el ancho completo */
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+.navbar-fixed-top {
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.footer-custom {
+    background-color: var(--navbar-footer-background-color);
+    color: var(--highlight-color);
+    padding: 20px;
+}
+
+.footer-logo {
+    max-width: 150px; 
+}
+
+.footer-social-icons {
+    margin-top: 15px;
+}
+
+.footer-social-icons .social-icon {
+    margin-right: 10px;
+    color: var(--highlight-color);
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.footer-social-icons .social-icon:hover {
+    color: var(--highlight-color);
+}
+
+.contact-link {
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+
+     .navbar-fixed-top {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030; 
+    }
+
+    .header-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1;
+    background: #f5f5f5;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+/*.header {
+    display: flex;
+    justify-content: space-between; /* Asegura que los elementos estén bien distribuidos */
+/*    align-items: center;
+    background-color: #398F9D;
+    padding: 10px 30px; /* Da suficiente espacio lateral para que no se corten los elementos */
+/*    color: #ffffff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    white-space: nowrap; /* Previene cortes de texto innecesarios */
+/*} */ 
+
+
+/*.logo-title {
+    display: flex;
+    align-items: center;
+    flex-shrink: 1; /* Permite que este contenedor se ajuste si es necesario */
+/*}
+
+.logo {
+    max-width: 50px; /* Mantén el logo compacto */
+/*   height: auto;
+    margin-right: 10px;
+}
+
+.login-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem; /* Ajusta el tamaño de texto si es muy grande */
+ /*   white-space: nowrap; /* Evita que se corte el texto o se envíe a otra línea */
+ /*   overflow: hidden; /* Oculta cualquier desbordamiento */
+ /*   text-overflow: ellipsis; /* Añade puntos suspensivos si el texto no cabe */
+ /*   padding-right: 50px;
+}
+
+.login-link:hover{
+    color: aquamarine;
+} */
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column; /* Pasa los elementos uno debajo del otro si la pantalla es muy estrecha */
+        align-items: flex-start;
+    }
+
+    .login-link {
+        margin-top: 10px; /* Asegúrate de que quede visible */
+    }
+}
+
+
+main {
+    width: 100%;
+    margin-top: 120px; /* Ajusta el espacio para el header fijo */
+    padding: 20px;
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+footer {
+    width: 100%; /* Asegura que el footer ocupe el ancho completo del viewport */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    margin: 0; /* Elimina cualquier margen inesperado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #398F9D;
+    padding: 20px 40px;
+    color: white;
+    position: relative;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+footer h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+footer h5 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+footer li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/*Inicia el estilo de las tarjetas*/
+/*card-home{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    margin-top: 200px; /* Ajusta el espacio por encima de la card */
+ /*   margin-bottom: 40px;
+    margin: 0 auto;
+}*/
+
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #398F9D;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 20px;
+    padding: 10px;
+}
+
+.card {
+    perspective: 1000px;
+    width: 250px; /* Aumenta el ancho si es necesario */
+    height: 3500px; /* Ajusta la altura según el contenido */
+
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 352px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.card-front h3 {
+    margin-bottom: 5px;
+    color: #398F9D;
+}
+
+.card-image {
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* estas propiedades hacen que la imagen tenga el tamaño de la tarjeta*/
+.card-image img {
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-back {
+    background-color: #6C9CAC;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+/* Configuración del botón de atrás de las tarjetas */
+.card-back a { 
+    margin-top: auto;
+    background-color: #CAB59C;
+    color: #4C5B88;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block; /* Permite agregar padding y que se comporte como un botón */
+    font-size: 16px; /* Tamaño del texto */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.card-back a:hover { /* Color del botón de atrás de la tarjeta cuando pasas el mouse por encima */
+    background-color: #E4EAEB;
+    Color: #4D5E5C;
+}
+
+
+.button-center {
+    display: block;
+    margin: 20px auto;
+}
+
+button {
+    background-color: #6C9CAC;
+    color: #061318;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #b9deec;
+    color: #134e4f;
+}
+
+
+
+

@@ -1,0 +1,63 @@
+.specialists-container {
+    width: 80%; /* Aumenta el ancho al 100% del contenedor padre */
+    max-width: 1000px; /* Establece un máximo de ancho mayor */
+    margin: auto;
+    padding: 10px;
+    background-color: #bac6c2;
+    border-radius: 10px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    font-family: Arial, sans-serif;
+}
+ 
+.specialists-container h2 {
+    color: #134e4f;
+}
+
+.specialist-category {
+    margin-top: 10px;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a69d7f;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #f3efec;
+}
+
+.category-content {
+    display: none;
+    background-color: #e0dece;
+    padding: 10px;
+    /*border-radius: 8px;*/
+    
+}
+
+.specialist-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #cce7eb;
+}
+
+.specialist-info span {
+    margin-right: 10px;
+}
+
+.appointment-button {
+    background-color: #2e424c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.appointment-button:hover {
+    background-color: #2a7a7f;
+}
