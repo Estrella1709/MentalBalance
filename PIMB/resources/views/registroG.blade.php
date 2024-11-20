@@ -60,16 +60,17 @@
                     <input type="password" name="password_confirmation" placeholder="Confirmar contraseña">
                 </div>
                 <div class="user-type">
-                    <label><h4>Tipo usuario</h4></label>
-                    <label><input type="radio" name="user-type" value="medico" {{ old('user-type') == 'medico' ? 'checked' : '' }}> Médico</label>
-                    <label><input type="radio" name="user-type" value="paciente" {{ old('user-type') == 'paciente' ? 'checked' : '' }}> Paciente</label>
-                    @error('user-type')
-                        <div style="color: red;">{{ $message }}</div>
-                    @enderror
+                <label><h4>Tipo usuario</h4></label>
+                <label><input type="radio" name="user-type" value="1" {{ old('user-type') == '1' ? 'checked' : '' }}> Médico</label>
+                <label><input type="radio" name="user-type" value="2" {{ old('user-type') == '2' ? 'checked' : '' }}> Paciente</label>
+                @error('user-type')
+                    <div style="color: red;">{{ $message }}</div>
+                @enderror
                 </div>
 
+
                 <div class="buttons">
-                    <a href="#" class="login-link">&#191;Ya tienes cuenta? Inicia sesión</a>
+                    <a href="{{ route('rutaInicioSesion') }}" class="login-link">&#191;Ya tienes cuenta? Inicia sesión</a>
                     <button type="submit">Registrar</button>   
                 </div>
             </form>

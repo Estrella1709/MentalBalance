@@ -27,9 +27,10 @@
                 <div style="color: red;">{{ $message }}</div>
             @enderror
 
-            <button type="submit">Ingresar</button>
+            <button type="button" onclick="window.location.href='{{ route('rutaFormulario') }}'">Ingresar</button>
+
             </form>
-            <a href="#" class="register-link">¿No tienes cuenta? Regístrate</a>
+            <a href="{{ route('rutaRegistroGeneral') }}" class="register-link">¿No tienes cuenta? Regístrate</a>
         </div>
     </div>
 </body>

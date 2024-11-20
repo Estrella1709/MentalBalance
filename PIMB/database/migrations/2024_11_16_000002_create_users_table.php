@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->string('apellidoP');
             $table->string('apellidoM');
-            $table->string('correo')->unique();
+            $table->string('email')->unique();
             $table->string('telefono');
             $table->date('fecha_nacimiento');
-            $table->string('constraseña');
+            $table->string('password');
             $table->foreignId('id_tipo_usuario')->constrained('tipo_usuarios');
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuario');
+        Schema::dropIfExists('users');
     }
 };

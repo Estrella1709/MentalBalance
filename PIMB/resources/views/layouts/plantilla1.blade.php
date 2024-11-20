@@ -12,7 +12,7 @@
             <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo">
             <h1>Mental Balance</h1>
         </div>
-        <a href="#" class="login-link">Iniciar sesión</a>
+        <a href="{{ route('rutaInicioSesion') }}" class="login-link">Iniciar sesión</a>
     </header>
 
     <main>

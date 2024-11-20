@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('especialidades', function (Blueprint $table) {
+        Schema::create('medicos', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo');
+            $table->foreignId('id_especialidad')->constrained('especialidades');
+            $table->string('cedula');
+            $table->foreignId('id_usuario')->constrained('users');
+            $table->foreignId('id_horario_medico')->constrained('horario_medicos');
             $table->timestamps();
-        });
-        
-        
+        });       
     }
 
     /**
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('especialidades');
+        Schema::dropIfExists('medicos');
     }
 };

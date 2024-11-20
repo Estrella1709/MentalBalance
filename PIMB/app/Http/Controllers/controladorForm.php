@@ -18,4 +18,6 @@ class controladorForm extends Controller
 
         return redirect()->back()->with('success', 'Formulario enviado correctamente.');
     }
+
+    
 }
