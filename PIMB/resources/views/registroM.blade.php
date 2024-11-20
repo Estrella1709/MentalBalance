@@ -30,10 +30,9 @@
                     @enderror
                 </div>
                 <div class="buttons">
-                    <button type="submit">Registrar</button>   
+                    <button type="submit">Terminar registro</button>   
                 </div>
             </form>
-            <a href="#" class="register-link">¿Ya tienes cuenta? Inicia Sesión</a>
         </div>
     </div>
 </body>

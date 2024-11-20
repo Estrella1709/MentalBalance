@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_especialidad')->constrained('especialidades');
             $table->string('cedula');
-            $table->foreignId('id_usuario')->constrained('usuarios');
+            $table->foreignId('id_usuario')->constrained('users');
             $table->foreignId('id_horario_medico')->constrained('horario_medicos');
             $table->timestamps();
         });       

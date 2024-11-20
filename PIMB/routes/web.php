@@ -10,13 +10,16 @@ use App\Http\Controllers\controladorDirectorio;
 use App\Http\Controllers\controladorSCita;
 use App\Http\Controllers\controladorInfoEM;
 
+use App\Http\Controllers\registroController;
+
+
 //Rutas de Inicio de sesión
 Route::get('/inicioSesion', [controladorIS::class,'inicioSesion'])->name('rutaInicioSesion');
 Route::post('/IS', [controladorIS::class, 'procesarIS'])->name('rutaProcesarInicioSesion');
 
 //Rutas de Registro General
-Route::get('/registroG', [controladorREG::class,'registroG'])->name('rutaRegistroGeneral');
-Route::post('/registroGV', [controladorREG::class, 'procesarREG'])->name('rutaProcesarRegistroGeneral');
+Route::get('/usuarios/create', [registroController::class,'create'])->name('rutaRegistroGeneral');
+Route::post('/usuarios', [registroController::class, 'store'])->name('rutaProcesarRegistroGeneral');
 
 //Rutas de Registro Medico
 Route::get('/registroM', [controladorREM::class,'registroM'])->name('rutaRegistroMedico');

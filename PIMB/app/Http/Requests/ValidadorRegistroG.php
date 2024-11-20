@@ -29,7 +29,7 @@ class ValidadorRegistroG extends FormRequest
             'telefono' => 'required|numeric|digits_between:10,15',
             'fecha_nacimiento' => 'required|date',
             'password' => 'required|min:6|confirmed',
-            'user-type' => 'required|in:medico,paciente'
+            'user-type' => 'required|in:1,2'
         ];
     }
 

@@ -78,6 +78,6 @@
         <br>
         <br>
         <h2>¡Haz un test para saber como está tu salud mental!</h2>
-        <button type="submit" class="button-center">Realizar Test</button>
+        <button type="submit" class="button-center" href="{{ route('rutaFormulario') }}">Realizar Test</button>
         
     @endsection
