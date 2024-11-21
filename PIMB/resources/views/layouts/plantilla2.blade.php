@@ -12,7 +12,9 @@
             <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo">
             <h1>Mental Balance</h1>
         </div>
+        <a href="#" class="login-link">Directorio</a>
         <a href="#" class="login-link">Mis citas</a>
+       
     </header>
 
     <main>

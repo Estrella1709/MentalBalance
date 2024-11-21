@@ -13,4 +13,8 @@ class controladorHome extends Controller
     public function prueba(){
         return view('prueba');
     }
+
+    public function directorioC(){
+        return view('directorioC');
+    }
 }

@@ -44,4 +44,7 @@ Route::get('/ansiedad', [controladorInfoEM::class,'ansiedad'])->name('rutaInfoAn
 Route::get('/bipolaridad', [controladorInfoEM::class,'bipolaridad'])->name('rutaInfoBipolaridad');
 Route::get('/tdah', [controladorInfoEM::class,'tdah'])->name('rutaInfoTDAH');
 
+
+//Pruebas
 Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
+Route::get('/directorioC', [controladorHome::class,'directorioC'])->name('rutaDirectorioC');

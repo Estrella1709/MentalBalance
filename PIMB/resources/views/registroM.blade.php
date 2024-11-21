@@ -29,6 +29,12 @@
                         <div style="color: red;">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="form-group">
+                    <input type="text" name="descripcion" placeholder="Escribe una breve descripción de tu trabajo" value="{{ old('descripcion') }}">
+                    @error('descripcion')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="buttons">
                     <button type="submit">Terminar registro</button>   
                 </div>
