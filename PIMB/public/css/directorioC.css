@@ -53,6 +53,12 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.appointment-item:hover {
+    background-color: #b2dfe6;
+}
+
+
+
 .appointment-info p {
     margin: 0;
     font-weight: bold;
