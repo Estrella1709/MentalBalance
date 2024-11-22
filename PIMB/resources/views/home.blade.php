@@ -8,7 +8,7 @@
         @if(auth()->check() && auth()->user()->id_tipo_usuario == 2)
         <h1 class="bienvenido">Bienvenid@, {{ auth()->user()->nombre }}</h1>
         @else
-        <p>No tienes acceso a esta sección.</p>
+        <h1 class="bienvenido">¡Bienvenido!</h1>
         @endif
         <p>Si estas en este lugar significa que tienes dudas acerca de tu salud mental, hay que recordar que la salud mental 
         es muy importante, ya que dependiendo cómo estemos mentalmente puede afectar significativamente nuestras vidas,
