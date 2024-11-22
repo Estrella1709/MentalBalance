@@ -8,17 +8,24 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between; /* Asegura que los elementos estén bien distribuidos */
+    justify-content: space-between; /* Distribuye la logo-title y nav-links a los extremos */
     align-items: center;
     background-color: #398F9D;
-    padding: 10px 30px; /* Da suficiente espacio lateral para que no se corten los elementos */
+    padding: 10px 30px;
     color: #ffffff;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
-    white-space: nowrap; /* Previene cortes de texto innecesarios */
+}
+
+
+
+.nav-links {
+    display: flex; /* Alinea los elementos horizontalmente */
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 20px; /* Espaciado uniforme entre enlaces y botón */
 }
 
 
@@ -34,28 +41,42 @@ body {
     margin-right: 10px;
 }
 
-.login-link {
+.login-link, .logout-button {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.5rem; /* Ajusta el tamaño de texto si es muy grande */
-    white-space: nowrap; /* Evita que se corte el texto o se envíe a otra línea */
-    overflow: hidden; /* Oculta cualquier desbordamiento */
-    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto no cabe */
-    padding-right: 50px;
+    font-size: 1.5rem;
+    background: none; /* Sin fondo para el botón */
+    border: none; /* Sin bordes */
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 0; /* Elimina cualquier padding extra */
+    margin: 0; /* Elimina cualquier margen extra */
+    line-height: 1; /* Asegura que el texto tenga la misma altura */
+    transition: color 0.3s ease; /* Transición suave en hover */
+    padding-right: 40px;
 }
 
-.login-link:hover{
+.logout-button:focus {
+    outline: none; /* Elimina el borde por defecto al enfocar */
+}
+
+.login-link:hover , .logout-button:hover{
     color: aquamarine;
 }
 
+
+
 @media (max-width: 600px) {
     .header {
-        flex-direction: column; /* Pasa los elementos uno debajo del otro si la pantalla es muy estrecha */
+        flex-direction: column;
         align-items: flex-start;
     }
 
-    .login-link {
-        margin-top: 10px; /* Asegúrate de que quede visible */
+    .nav-links {
+        flex-direction: column; /* Cambia a vertical en pantallas pequeñas */
+        align-items: flex-start;
+        gap: 10px; /* Reduce el espacio entre enlaces */
+        margin-top: 10px;
     }
 }
 

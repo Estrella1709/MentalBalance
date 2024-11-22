@@ -11,24 +11,29 @@ use App\Http\Controllers\controladorInfoEM;
 use App\Http\Controllers\registroController;
 
 
-//Rutas de Inicio de sesión
-Route::get('/inicioSesion', [controladorIS::class,'inicioSesion'])->name('rutaInicioSesion');
-Route::post('/IS', [controladorIS::class, 'procesarIS'])->name('rutaProcesarInicioSesion');
+//Rutas de Inicio de sesión:
+// Formulario de inicio de sesión
+Route::get('/inicioSesion', [registroController::class, 'showLoginForm'])->name('rutaInicioSesion');
+// Procesar inicio de sesión
+Route::post('/inicioSesion', [registroController::class, 'login'])->name('rutaProcesarInicioSesion');
+// Cerrar sesión
+Route::post('/logout', [registroController::class, 'logout'])->name('rutaCerrarSesion');
 
-//Rutas de Registro General
+
+//Rutas de Registro:
+//Formulario de Registro General
 Route::get('/usuarios/create', [registroController::class,'create'])->name('rutaRegistroGeneral');
 Route::post('/usuarios', [registroController::class, 'store'])->name('rutaProcesarRegistroGeneral');
-
-//Rutas de Registro Medico
+//Formulario de Registro Medico
 Route::get('/registro-medico/{user_id}', [registroController::class, 'showFormMedico'])->name('registroM');
 Route::post('/registro-medico', [registroController::class, 'storeMedico'])->name('rutaProcesarRegistroMedico');
 
 //Rutas de Home
-Route::get('/', [controladorHome::class,'home'])->name('rutaHome');
+Route::get('/', [registroController::class,'index'])->name('rutaHome');
 
 //Rutas de Formulario
-Route::get('/formulario', [controladorForm::class,'formulario'])->name('rutaFormulario');
-Route::post('/enviarTest', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
+Route::get('/test-salud-mental', [controladorForm::class, 'formulario'])->name('rutaFormulario')->middleware('auth');
+Route::post('/test-salud-mental', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
 
 //Rutas de Directorio
 Route::get('/directorio', [controladorDirectorio::class,'directorio'])->name('rutaDirectorio');
@@ -45,4 +50,3 @@ Route::get('/tdah', [controladorInfoEM::class,'tdah'])->name('rutaInfoTDAH');
 
 //Pruebas
 Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
-Route::get('/directorioC', [controladorHome::class,'directorioC'])->name('rutaDirectorioC');
