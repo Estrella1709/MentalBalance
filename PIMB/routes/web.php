@@ -22,8 +22,8 @@ Route::get('/usuarios/create', [registroController::class,'create'])->name('ruta
 Route::post('/usuarios', [registroController::class, 'store'])->name('rutaProcesarRegistroGeneral');
 
 //Rutas de Registro Medico
-Route::get('/registroM', [controladorREM::class,'registroM'])->name('rutaRegistroMedico');
-Route::post('/registroMV', [controladorREM::class, 'procesarREM'])->name('rutaProcesarRegistroMedico');
+Route::get('/registro-medico/{user_id}', [registroController::class, 'showFormMedico'])->name('registroM');
+Route::post('/registro-medico', [registroController::class, 'storeMedico'])->name('rutaProcesarRegistroMedico');
 
 //Rutas de Home
 Route::get('/', [controladorHome::class,'home'])->name('rutaHome');
