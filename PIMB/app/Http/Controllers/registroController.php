@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Http\Requests\ValidadorRegistroG;
 use App\Http\Requests\ValidadorRegistroM;
+
 
 class registroController extends Controller
 {
@@ -15,12 +17,25 @@ class registroController extends Controller
      */
     public function index()
     {
-        //
+        $isLoggedIn = auth()->check(); // Verifica si el usuario está autenticado
+        $user = auth()->user(); // Obtiene el usuario autenticado, si existe
+
+        if ($isLoggedIn) {
+            // Renderiza la vista para usuarios autenticados con cambios
+            return view('home', [
+                'loggedIn' => true,
+                'user' => $user
+            ]);
+        }
+
+        // Renderiza la vista normal para usuarios no autenticados
+        return view('home', ['loggedIn' => false]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+   
+    /* 
+        Funciones para registro de usuario (paciente/medico)
+    */
     public function create()
     {
         return view('registroG');
@@ -31,9 +46,7 @@ class registroController extends Controller
         return view('registroM', compact('user_id'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(ValidadorRegistroG $request)
     {
         $idTipoUsuario = $request->input('user-type');
@@ -76,6 +89,54 @@ class registroController extends Controller
         // Redirigir con mensaje de éxito
         return redirect()->route('rutaInicioSesion')->with('success', 'Registro de médico completado');
     }
+
+
+
+
+
+    /* 
+        Funciones para inicio de sesión (paciente/medico)
+    */
+
+    public function showLoginForm()
+    {
+        return view('inicioSesion');
+    }
+
+    // Procesar el inicio de sesión
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        // Intentar iniciar sesión
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/'); 
+        }
+
+        // Si fallan las credenciales
+        return back()->withErrors([
+            'email' => 'Las credenciales no coinciden con nuestros registros.',
+        ])->onlyInput('email');
+    }
+
+    // Cerrar sesión
+    public function logout(Request $request)
+    {
+        Auth::logout(); // Cierra la sesión del usuario
+        $request->session()->invalidate(); // Invalida la sesión
+        $request->session()->regenerateToken(); // Regenera el token CSRF
+
+        return redirect('/')->with('success', 'Sesión cerrada exitosamente'); // Redirige al home
+    }
+
+
+
+
+
 
 
     /**
