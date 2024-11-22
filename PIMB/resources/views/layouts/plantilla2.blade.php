@@ -12,7 +12,17 @@
             <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo">
             <h1>Mental Balance</h1>
         </div>
+        <div class="nav-links">
+        <a href="{{ route('rutaHome') }}" class="login-link">Inicio</a>
+        <a href="#" class="login-link">Mi pre-diagnóstico</a>
+        <a href="{{ route('rutaDirectorio') }}" class="login-link">Directorio</a>
         <a href="#" class="login-link">Mis citas</a>
+        <form action="{{ route('rutaCerrarSesion') }}" method="POST" style="display: inline;">
+        @csrf
+        <button type="submit" class="logout-button">Cerrar sesión</button>
+        </form>
+    </div>
+       
     </header>
 
     <main>
@@ -28,5 +38,7 @@
         <li>Martínez Martínez Roberto Uriel</li>
         </ul>
     </footer>
+
+    
 </body>
 </html>

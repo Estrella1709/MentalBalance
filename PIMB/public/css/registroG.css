@@ -130,3 +130,8 @@ button:hover {
 .login-link:hover {
     text-decoration: underline;
 }
+
+.opcion{
+    cursor: pointer;
+    accent-color: #398F9D;
+}

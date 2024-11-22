@@ -16,5 +16,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call(tipo_usuarioSeeder::class);
+        $this->call(enfermedadesSeeder::class);
+        $this->call(estadoSeeder::class);
+        $this->call(especialidadSeeder::class);
     }
 }

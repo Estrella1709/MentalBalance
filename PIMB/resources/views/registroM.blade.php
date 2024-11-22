@@ -15,23 +15,44 @@
                 <img src="{{ asset('img/logo.png')}}" alt="Logo" class="logo">
             </div>
             <h2>Registro</h2>
-            <form action="{{ route('rutaProcesarRegistroMedico') }}" method="post">
-                @csrf
+            <form action="{{ route('rutaProcesarRegistroMedico') }}" method="POST">
+            @csrf
+
+                <input type="hidden" name="user_id" value="{{ $user_id }}">
+
+                <div class="user-type">
+                    <label for="especialidad"><h4>Especialidad</h4></label>
+                    <select name="especialidad" id="especialidad"> <!-- Aquí aseguramos que el nombre coincida con el que espera el controlador -->
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="1" {{ old('especialidad') == '1' ? 'selected' : '' }}>Ansiedad</option>
+                        <option value="2" {{ old('especialidad') == '2' ? 'selected' : '' }}>Bipolaridad</option>
+                        <option value="3" {{ old('especialidad') == '3' ? 'selected' : '' }}>Depresión</option>
+                        <option value="4" {{ old('especialidad') == '4' ? 'selected' : '' }}>TDAH</option>
+                    </select>
+                    @error('especialidad')
+                        <div style="color: red;">{{ $message }}</div>
+                    @enderror
+                </div>
+
+
+
+
                 <div class="form-group">
                     <input type="text" name="cedula_profesional" placeholder="Cédula Profesional" value="{{ old('cedula_profesional') }}">
                     @error('cedula_profesional')
                         <div style="color: red;">{{ $message }}</div>
                     @enderror
                 </div>
+                
                 <div class="form-group">
-                    <input type="text" name="especialidad" placeholder="Especialidad" value="{{ old('especialidad') }}">
-                    @error('especialidad')
+                    <input type="text" name="descripcion" placeholder="Escribe una breve descripción de tu trabajo" value="{{ old('descripcion') }}">
+                    @error('descripcion')
                         <div style="color: red;">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="buttons">
+
                     <button type="submit">Terminar registro</button>   
-                </div>
+                
             </form>
         </div>
     </div>

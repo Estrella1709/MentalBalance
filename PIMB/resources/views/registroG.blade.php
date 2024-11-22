@@ -61,8 +61,8 @@
                 </div>
                 <div class="user-type">
                 <label><h4>Tipo usuario</h4></label>
-                <label><input type="radio" name="user-type" value="1" {{ old('user-type') == '1' ? 'checked' : '' }}> Médico</label>
-                <label><input type="radio" name="user-type" value="2" {{ old('user-type') == '2' ? 'checked' : '' }}> Paciente</label>
+                <label><input class="opcion" type="radio" name="user-type" value="1" {{ old('user-type') == '1' ? 'checked' : '' }}> Médico</label>
+                <label><input class="opcion" type="radio" name="user-type" value="2" {{ old('user-type') == '2' ? 'checked' : '' }}> Paciente</label>
                 @error('user-type')
                     <div style="color: red;">{{ $message }}</div>
                 @enderror

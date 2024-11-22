@@ -1,9 +1,15 @@
-@extends('layouts.plantilla1')
+@extends(auth()->check() && auth()->user()->id_tipo_usuario == 2 ? 'layouts.plantilla2' : 'layouts.plantilla1')
+
+
     @section('contenido')
 
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <div class="card-home">
+        <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+        <div class="card-home">
+        @if(auth()->check() && auth()->user()->id_tipo_usuario == 2)
+        <h1 class="bienvenido">Bienvenid@, {{ auth()->user()->nombre }}</h1>
+        @else
         <h1 class="bienvenido">¡Bienvenido!</h1>
+        @endif
         <p>Si estas en este lugar significa que tienes dudas acerca de tu salud mental, hay que recordar que la salud mental 
         es muy importante, ya que dependiendo cómo estemos mentalmente puede afectar significativamente nuestras vidas,
         empezando por cosas pequeñas como perder el apetito, el insomnio, no querer hacer nada, desmotivación, etc.</p>
@@ -77,7 +83,21 @@
         </div>
         <br>
         <br>
-        <h2>¡Haz un test para saber como está tu salud mental!</h2>
-        <button type="submit" class="button-center" href="{{ route('rutaFormulario') }}">Realizar Test</button>
+
+        <h2>
+            {{ $loggedIn ? '¡Realiza un formulario para saber el estado de tu salud mental!' : '¡Inicia sesión para saber más de tu salud mental!' }}
+        </h2>
+        <button type="button" class="button-center" 
+            onclick="window.location.href='{{ $loggedIn ? route('rutaFormulario') : route('rutaInicioSesion') }}'">
+            {{ $loggedIn ? 'Realizar Test' : 'Iniciar sesión' }}
+        </button>
         
+        <script>
+            document.querySelector('.logout-button').addEventListener('click', function (e) {
+                if (!confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+                    e.preventDefault(); // Si el usuario cancela, no se envía el formulario
+                }
+            });
+        </script>
+
     @endsection
