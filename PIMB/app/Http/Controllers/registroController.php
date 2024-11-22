@@ -28,7 +28,7 @@ class registroController extends Controller
 
     public function showFormMedico($user_id)
     {
-    return view('registroM', compact('user_id'));
+        return view('registroM', compact('user_id'));
     }
 
     /**
