@@ -56,7 +56,7 @@ class registroController extends Controller
             return redirect()->route('registroM', ['user_id' => $userId]);
         }
 
-        // Si es otro tipo de usuario (Paciente, por ejemplo), solo redirigir a la pantalla de inicio de sesión
+        // Si es otro tipo de usuario (Paciente), solo redirigir a la pantalla de inicio de sesión
         return redirect()->route('rutaInicioSesion')->with('success', 'Registro exitoso');
     }   
 

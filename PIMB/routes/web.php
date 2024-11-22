@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorIS;
-use App\Http\Controllers\controladorREG;
-use App\Http\Controllers\controladorREM;
 use App\Http\Controllers\controladorHome;
 use App\Http\Controllers\controladorForm;
 use App\Http\Controllers\controladorDirectorio;

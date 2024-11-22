@@ -77,7 +77,7 @@
         </div>
         <br>
         <br>
-        <h2>¡Haz un test para saber como está tu salud mental!</h2>
-        <button type="submit" class="button-center" href="{{ route('rutaFormulario') }}">Realizar Test</button>
+        <h2>¡Inicia sesión para saber más de tu salud mental!</h2>
+        <button type="submit" class="button-center" onclick="window.location.href='{{ route('rutaInicioSesion') }}'">Iniciar sesión</button>
         
     @endsection
