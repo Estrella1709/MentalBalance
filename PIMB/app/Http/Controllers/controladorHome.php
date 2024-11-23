@@ -14,5 +14,9 @@ class controladorHome extends Controller
         return view('prueba');
     }
 
+    public function citas(){
+        return view('citas');
+    }
+
     
 }

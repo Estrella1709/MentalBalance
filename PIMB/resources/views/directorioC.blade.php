@@ -52,6 +52,16 @@
 
                     <p>Ingresa una hora para tu cita</p>
                     <input type="time" id="hora_cita">
+
+                        <div class="user-type">
+                        <p>Elige tu tipo de cita</p>
+                        <select name="tipoCita" id="tipocita"> <!-- Aquí aseguramos que el nombre coincida con el que espera el controlador -->
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="1">Llamada</option>
+                            <option value="2">Videollamada</option>           
+                        </select>
+                    </div>
+
                     <br><br>
                     <button>Solicitar</button>
                 </form>

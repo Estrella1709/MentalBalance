@@ -16,7 +16,7 @@
         <a href="{{ route('rutaHome') }}" class="login-link">Inicio</a>
         <a href="#" class="login-link">Mi pre-diagnóstico</a>
         <a href="{{ route('rutaDirectorio') }}" class="login-link">Directorio</a>
-        <a href="#" class="login-link">Mis citas</a>
+        <a href="{{ route('rutaCitas') }}" class="login-link">Mis citas</a>
         <form action="{{ route('rutaCerrarSesion') }}" method="POST" style="display: inline;">
         @csrf
         <button type="submit" class="logout-button">Cerrar sesión</button>

@@ -51,3 +51,4 @@ Route::get('/tdah', [controladorInfoEM::class,'tdah'])->name('rutaInfoTDAH');
 
 //Pruebas
 Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
+Route::get('/citas', [controladorHome::class,'citas'])->name('rutaCitas');
