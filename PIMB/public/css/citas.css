@@ -25,7 +25,7 @@
 .right-panel {
     flex: 2;
     margin-left: 10px;
-   
+    overflow: hidden;
 }
 
 /* Estilos para el contenedor de 'Próximas citas' y los botones de filtrado */
@@ -152,6 +152,10 @@
     color: #333; /* Color del texto */
 }
 
+.cancel-cita{
+    width: 23%;
+    align-items: flex-end;
+}
 button {
     background-color: #398F9D;
     color: #ffffff;
@@ -187,38 +191,3 @@ form input:focus {
     outline: none;
 }
 
-.user-type {
-    background-color: #ffffff;
-    padding: 5px;
-    margin: 5px 3;
-    border-radius: 12px;
-    text-align: left;
-}
-
-.user-type h4 {
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-    color: #398F9D;
-    font-weight: bold;
-}
-
-.user-type select {
-    width: 90%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #555555;
-    cursor: pointer;
-    transition: border-color 0.3s;
-}
-
-.user-type select:hover {
-    border-color: #398F9D;
-}
-
-.user-type select:focus {
-    border-color: #398F9D;
-    outline: none;
-}

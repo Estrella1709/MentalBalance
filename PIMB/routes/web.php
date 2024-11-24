@@ -9,6 +9,7 @@ use App\Http\Controllers\controladorSCita;
 use App\Http\Controllers\controladorInfoEM;
 
 use App\Http\Controllers\registroController;
+use App\Http\Controllers\consultasController;
 
 
 //Rutas de Inicio de sesión:
@@ -36,7 +37,7 @@ Route::get('/test-salud-mental', [controladorForm::class, 'formulario'])->name('
 Route::post('/test-salud-mental', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
 
 //Rutas de Directorio
-Route::get('/directorio', [controladorDirectorio::class,'directorio'])->name('rutaDirectorio');
+Route::get('/directorio', [consultasController::class,'index'])->name('rutaDirectorio');
 
 //Rutas de Solicitar Cita
 Route::get('/SCita', [controladorSCita::class,'SCita'])->name('rutaSolicitarCita');
@@ -50,3 +51,4 @@ Route::get('/tdah', [controladorInfoEM::class,'tdah'])->name('rutaInfoTDAH');
 
 //Pruebas
 Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
+Route::get('/citas', [controladorHome::class,'citas'])->name('rutaCitas');

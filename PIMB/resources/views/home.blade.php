@@ -8,7 +8,7 @@
         @if(auth()->check() && auth()->user()->id_tipo_usuario == 2)
         <h1 class="bienvenido">Bienvenid@, {{ auth()->user()->nombre }}</h1>
         @else
-        <p>No tienes acceso a esta sección.</p>
+        <h1 class="bienvenido">¡Bienvenido!</h1>
         @endif
         <p>Si estas en este lugar significa que tienes dudas acerca de tu salud mental, hay que recordar que la salud mental 
         es muy importante, ya que dependiendo cómo estemos mentalmente puede afectar significativamente nuestras vidas,
@@ -34,7 +34,7 @@
                     </div>
                     <div class="card-back">
                         <p>Información sobre ansiedad...</p>
-                        <button>Leer más</button>
+                        <button onclick="window.location.href='{{ route('rutaInfoAnsiedad')}}'">Leer más</button>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="card-back">
                         <p>Información sobre depresión...</p>
-                        <button>Leer más</button>
+                        <button onclick="window.location.href='{{ route('rutaInfoDepresion')}}'">Leer más</button>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="card-back">
                         <p>Información sobre TDAH...</p>
-                        <button>Leer más</button>
+                        <button onclick="window.location.href='{{ route('rutaInfoTDAH')}}'">Leer más</button>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="card-back">
                         <p>Información sobre bipolaridad...</p>
-                        <button>Leer más</button>
+                        <button onclick="window.location.href='{{ route('rutaInfoBipolaridad')}}'">Leer más</button>
                     </div>
                 </div>
             </div>
