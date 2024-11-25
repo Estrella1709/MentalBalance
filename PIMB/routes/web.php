@@ -10,6 +10,28 @@ use App\Http\Controllers\controladorInfoEM;
 
 use App\Http\Controllers\registroController;
 use App\Http\Controllers\consultasController;
+use App\Http\Controllers\CitaController;
+
+
+
+
+
+Route::middleware(['auth'])->group(function () {
+    // Aquí van tus rutas protegidas
+
+    //Rutas de Formulario
+    Route::get('/test-salud-mental', [controladorForm::class, 'formulario'])->name('rutaFormulario');
+    Route::post('/test-salud-mental', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
+
+    //Rutas de Directorio
+    Route::get('/directorio', [CitaController::class, 'index'])->name('rutaDirectorio');
+    //Rutas de Solicitar Cita (Directorio)
+    Route::post('/citas', [citaController::class, 'store'])->name('citas.store');
+
+
+
+});
+
 
 
 //Rutas de Inicio de sesión:
@@ -32,15 +54,7 @@ Route::post('/registro-medico', [registroController::class, 'storeMedico'])->nam
 //Rutas de Home
 Route::get('/', [registroController::class,'index'])->name('rutaHome');
 
-//Rutas de Formulario
-Route::get('/test-salud-mental', [controladorForm::class, 'formulario'])->name('rutaFormulario')->middleware('auth');
-Route::post('/test-salud-mental', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
 
-//Rutas de Directorio
-Route::get('/directorio', [consultasController::class,'index'])->name('rutaDirectorio');
-
-//Rutas de Solicitar Cita
-Route::get('/SCita', [controladorSCita::class,'SCita'])->name('rutaSolicitarCita');
 
 //Rutas Información de Enfermedades Mentales
 Route::get('/depresion', [controladorInfoEM::class,'depresion'])->name('rutaInfoDepresion');

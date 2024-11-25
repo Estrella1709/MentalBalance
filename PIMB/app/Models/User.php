@@ -20,6 +20,7 @@ class User extends Authenticatable
 
     public function medico()
     {
-        return $this->hasOne(Medico::class, 'id_usuario');
+        return $this->hasOne(Medico::class);
     }
+
 }

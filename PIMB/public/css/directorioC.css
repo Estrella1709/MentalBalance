@@ -222,3 +222,10 @@ form input:focus {
     border-color: #398F9D;
     outline: none;
 }
+
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 0.2em;
+}

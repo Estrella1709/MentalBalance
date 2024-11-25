@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('id_paciente')->constrained('pacientes');
             $table->foreignId('id_medico')->constrained('medicos');
             $table->foreignId('id_tipo_cita')->constrained('tipo_cita');
-            $table->foreignId('id_estado')->constrained('estado');
-            $table->dateTime('fecha');
+            $table->foreignId('id_estado')->default(1)->constrained('estado'); // No uses default aquí
+            $table->date('fecha');
             $table->time('hora');
             $table->timestamps();
         });
