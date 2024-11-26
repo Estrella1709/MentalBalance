@@ -14,8 +14,8 @@ class estadoSeeder extends Seeder
     public function run(): void
     {
         DB::table('estado')->insert([
-            ['tipo'=>'pendiente'],
-            ['tipo'=>'atendida']
+            ['tipo'=>'Pendiente'],
+            ['tipo'=>'Atendida']
         ]);
     }
 }

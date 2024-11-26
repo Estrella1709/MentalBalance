@@ -11,7 +11,7 @@ body {
     justify-content: space-between; /* Distribuye la logo-title y nav-links a los extremos */
     align-items: center;
     background-color: #398F9D;
-    padding: 10px 30px;
+    padding: 5px 30px;
     color: #ffffff;
     width: 100%;
     position: fixed;

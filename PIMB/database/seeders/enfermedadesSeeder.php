@@ -14,10 +14,10 @@ class enfermedadesSeeder extends Seeder
     public function run(): void
     {
         DB::table('enfermedades')->insert([
-            ['nombre'=>'ansiedad'],
-            ['nombre'=>'bipolaridad'],
-            ['nombre'=>'depresion'],
-            ['nombre'=>'tdah']
+            ['nombre'=>'Ansiedad'],
+            ['nombre'=>'Bipolaridad'],
+            ['nombre'=>'Depresion'],
+            ['nombre'=>'TDAH']
         ]);
     }
 }

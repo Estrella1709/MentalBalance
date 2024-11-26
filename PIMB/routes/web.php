@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorIS;
 use App\Http\Controllers\controladorHome;
 use App\Http\Controllers\controladorForm;
-use App\Http\Controllers\controladorDirectorio;
 use App\Http\Controllers\controladorSCita;
 use App\Http\Controllers\controladorInfoEM;
 
 use App\Http\Controllers\registroController;
 use App\Http\Controllers\consultasController;
+use App\Http\Controllers\CitasController;
 
 
 //Rutas de Inicio de sesión:
@@ -19,7 +19,6 @@ Route::get('/inicioSesion', [registroController::class, 'showLoginForm'])->name(
 Route::post('/inicioSesion', [registroController::class, 'login'])->name('rutaProcesarInicioSesion');
 // Cerrar sesión
 Route::post('/logout', [registroController::class, 'logout'])->name('rutaCerrarSesion');
-
 
 //Rutas de Registro:
 //Formulario de Registro General
@@ -32,12 +31,23 @@ Route::post('/registro-medico', [registroController::class, 'storeMedico'])->nam
 //Rutas de Home
 Route::get('/', [registroController::class,'index'])->name('rutaHome');
 
-//Rutas de Formulario
-Route::get('/test-salud-mental', [controladorForm::class, 'formulario'])->name('rutaFormulario')->middleware('auth');
-Route::post('/test-salud-mental', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
 
-//Rutas de Directorio
-Route::get('/directorio', [consultasController::class,'index'])->name('rutaDirectorio');
+
+Route::middleware(['auth'])->group(function () {
+    //Rutas de Formulario
+    Route::get('/test-salud-mental', [controladorForm::class, 'formulario'])->name('rutaFormulario')->middleware('auth');
+    Route::post('/test-salud-mental', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
+
+    //Rutas de Directorio
+    Route::get('/directorio', [consultasController::class,'index'])->name('rutaDirectorio');
+
+    //Envio de cita
+    Route::post('/citas', [CitasController::class, 'store'])->name('citas.store');
+
+});
+
+
+
 
 //Rutas de Solicitar Cita
 Route::get('/SCita', [controladorSCita::class,'SCita'])->name('rutaSolicitarCita');
@@ -51,3 +61,4 @@ Route::get('/tdah', [controladorInfoEM::class,'tdah'])->name('rutaInfoTDAH');
 
 //Pruebas
 Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
+Route::get('/citas', [controladorHome::class,'citas'])->name('rutaCitas');
