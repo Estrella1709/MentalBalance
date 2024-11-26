@@ -69,6 +69,16 @@ class registroController extends Controller
             return redirect()->route('registroM', ['user_id' => $userId]);
         }
 
+        // Si el tipo de usuario es paciente, guardar el id del usuario en la tabla pacientes
+        if ($idTipoUsuario == 2) { // Si el tipo de usuario es paciente
+            DB::table('pacientes')->insert([
+                'id_usuario' => $userId,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
+
+
         // Si es otro tipo de usuario (Paciente), solo redirigir a la pantalla de inicio de sesión
         return redirect()->route('rutaInicioSesion')->with('success', 'Registro exitoso');
     }   

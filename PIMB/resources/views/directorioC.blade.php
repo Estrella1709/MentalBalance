@@ -11,7 +11,7 @@
 
         <!-- Mostrar los médicos desde la base de datos -->
         @foreach ($medicos as $medico)
-            <div class="appointment-item" onclick="showDetails('{{ $medico->user->nombre }} {{ $medico->user->apellidoP }} {{ $medico->user->apellidoM }}', '{{ $medico->cedula }}', '{{ $medico->especialidad->tipo }}', '{{ $medico->descripcion }}', '{{ asset($medico->user->imagen) }}')">
+            <div class="appointment-item" onclick="showDetails('{{ $medico->user->nombre }} {{ $medico->user->apellidoP }} {{ $medico->user->apellidoM }}', '{{ $medico->cedula }}', '{{ $medico->especialidad->tipo }}', '{{ $medico->descripcion }}', '{{ asset($medico->user->imagen) }}', {{ $medico->id }})">
                 <div class="appointment-info">
                     <p>{{ $medico->user->nombre }} {{ $medico->user->apellidoP }} {{ $medico->user->apellidoM }}</p> <!-- Nombre del especialista -->
                     <span>{{ $medico->especialidad->tipo }}</span> <!-- Especialidad -->
@@ -46,25 +46,29 @@
         <div id="recipes-section">
             <h3 class="prox-citas">Solicita una cita</h3>
             <div class="container-cita">
-                <form action="">
-                    <p>Ingresa la fecha de tu cita</p>
-                    <input type="date" name="fecha_cita" placeholder="Fecha de cita" value="{{ old('fecha_cita') }}">
+            <form method="POST" action="{{ route('citas.store') }}">
+                @csrf
+                <input type="hidden" name="id_medico" id="id-medico"> <!-- Campo oculto para el médico -->
+                
+                <p>Ingresa la fecha de tu cita</p>
+                <input type="date" name="fecha_cita" placeholder="Fecha de cita" value="{{ old('fecha_cita') }}" required>
 
-                    <p>Ingresa una hora para tu cita</p>
-                    <input type="time" id="hora_cita">
+                <p>Ingresa una hora para tu cita</p>
+                <input type="time" name="hora_cita" id="hora_cita" required>
 
-                        <div class="user-type">
-                        <p>Elige tu tipo de cita</p>
-                        <select name="tipoCita" id="tipocita"> <!-- Aquí aseguramos que el nombre coincida con el que espera el controlador -->
-                            <option value="" disabled selected>Selecciona una opción</option>
-                            <option value="1">Llamada</option>
-                            <option value="2">Videollamada</option>           
-                        </select>
-                    </div>
+                <div class="user-type">
+                    <p>Elige tu tipo de cita</p>
+                    <select name="tipoCita" id="tipocita" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="1">Llamada</option>
+                        <option value="2">Videollamada</option>
+                    </select>
+                </div>
 
-                    <br><br>
-                    <button>Solicitar</button>
-                </form>
+                <br><br>
+                <button type="submit">Solicitar</button>
+            </form>
+
             </div>
         </div>
 
