@@ -43,6 +43,7 @@ Route::middleware(['auth'])->group(function () {
 
     //Envio de cita
     Route::post('/citas', [CitasController::class, 'store'])->name('citas.store');
+    Route::get('/citas', [consultasController::class,'indexCitas'])->name('rutaCitas');
 
 });
 
@@ -61,4 +62,4 @@ Route::get('/tdah', [controladorInfoEM::class,'tdah'])->name('rutaInfoTDAH');
 
 //Pruebas
 Route::get('/prueba', [controladorHome::class,'prueba'])->name('rutaPrueba');
-Route::get('/citas', [controladorHome::class,'citas'])->name('rutaCitas');
+
