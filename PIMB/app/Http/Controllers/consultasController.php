@@ -21,8 +21,11 @@ class consultasController extends Controller
     {
         // Obtener las citas del paciente actual (asumimos que el usuario está autenticado)
         $citas = Cita::with(['medico.user', 'tipoCita', 'estadoCita'])
-        ->where('id_paciente', auth()->user()->paciente->id) // Solo citas de ese paciente
+        ->whereHas('paciente', function ($query) {
+            $query->where('id_usuario', auth()->id());
+        })
         ->get();
+
 
         $citas->each(function ($cita) {
             $cita->fecha = \Carbon\Carbon::parse($cita->fecha)->format('d-m-Y');

@@ -152,10 +152,6 @@
     color: #333; /* Color del texto */
 }
 
-.cancel-cita{
-    width: 23%;
-    align-items: flex-end;
-}
 button {
     background-color: #398F9D;
     color: #ffffff;
@@ -171,6 +167,23 @@ button {
 button:hover {
     background-color: #347482;
 }
+
+/* Estilo específico para el botón de cancelar cita */
+.cancel-cita {
+    width: auto; /* Elimina el ancho completo */
+    padding: 10px 20px; /* Tamaño consistente */
+    background-color: #e74c3c; /* Rojo para indicar una acción destructiva */
+    font-size: 0.9rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0; /* Elimina márgenes extra */
+}
+
+.cancel-cita:hover {
+    background-color: #c0392b; /* Color más oscuro al pasar el cursor */
+}
+
 
 form input {
     width: 90%;

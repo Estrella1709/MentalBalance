@@ -44,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
     //Envio de cita
     Route::post('/citas', [CitasController::class, 'store'])->name('citas.store');
     Route::get('/citas', [consultasController::class,'indexCitas'])->name('rutaCitas');
+    Route::delete('/citas/{id}', [CitasController::class, 'destroy'])->name('citas.destroy');
+
 
 });
 
