@@ -51,18 +51,27 @@
                 <input type="hidden" name="id_medico" id="id-medico"> <!-- Campo oculto para el médico -->
                 
                 <p>Ingresa la fecha de tu cita</p>
-                <input type="date" name="fecha_cita" placeholder="Fecha de cita" value="{{ old('fecha_cita') }}" required>
+                <input type="date" name="fecha_cita" placeholder="Fecha de cita" value="{{ old('fecha_cita') }}">
+                @error('fecha_cita')
+                    <div style="color: red;">{{ $message }}</div>
+                @enderror
 
                 <p>Ingresa una hora para tu cita</p>
-                <input type="time" name="hora_cita" id="hora_cita" required>
+                <input type="time" name="hora_cita" id="hora_cita">
+                @error('hora_cita')
+                    <div style="color: red;">{{ $message }}</div>
+                @enderror
 
                 <div class="user-type">
                     <p>Elige tu tipo de cita</p>
-                    <select name="tipoCita" id="tipocita" required>
+                    <select name="tipoCita" id="tipocita">
                         <option value="" disabled selected>Selecciona una opción</option>
                         <option value="1">Llamada</option>
                         <option value="2">Videollamada</option>
                     </select>
+                    @error('tipoCita')
+                    <div style="color: red;">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <br><br>

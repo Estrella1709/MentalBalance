@@ -9,16 +9,16 @@
             <h2 class="prox-citas">¡Consulta tus citas!</h2>
         </div>
 
-        <!-- Mostrar los médicos desde la base de datos -->
-        
-            <div class="appointment-item" onclick="showDetails('Nombre Especialista', 'Nombre Paciente', 'Fecha de cita', 'Hora cita', 'tipo cita', 'Estado')">
+        <!-- Mostrar las citas desde la base de datos -->
+        @foreach ($citas as $cita)
+            <div class="appointment-item" onclick="showDetails('{{ $cita->medico->user->nombre }} {{ $cita->medico->user->apellidoP }} {{ $cita->medico->user->apellidoM }}', '{{ $cita->paciente->user->nombre }} {{ $cita->paciente->user->apellidoP }} {{ $cita->paciente->user->apellidoM }}', '{{ $cita->fecha }}', '{{ $cita->hora }}', '{{ $cita->tipoCita->tipo }}', '{{ $cita->estadoCita->tipo }}')">
                 <div class="appointment-info">
-                    <p>Cita con:  </p> <!-- Nombre del especialista -->
-                    <span>Fecha:    Hora:</span> <!-- Especialidad -->
+                    <p>Cita con: {{ $cita->medico->user->nombre }} {{ $cita->medico->user->apellidoP }} {{ $cita->medico->user->apellidoM }}</p>
+                    <span>Fecha: {{ $cita->fecha }}  Hora: {{ $cita->hora }}</span>
                 </div>
                 <button class="cancel-cita">Cancelar cita</button>
             </div>
-        
+        @endforeach
 
     </div>
 

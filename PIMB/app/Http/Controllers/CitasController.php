@@ -7,21 +7,17 @@ use App\Models\Medico;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ValidadorCitas;
+
 
 class CitasController extends Controller
 {
     
-    public function store(Request $request)
+    public function store(ValidadorCitas $request)
     {
         $user = auth()->user();
         $paciente = DB::table('pacientes')->where('id_usuario', $user->id)->first();
 
-        $request->validate([
-            'fecha_cita' => 'required|date',
-            'hora_cita' => 'required',
-            'tipoCita' => 'required|in:1,2',
-            'id_medico' => 'required|exists:medicos,id',
-        ]);
 
         if (!$paciente) {
             return redirect()->back()->with('error', 'No se encontró un paciente relacionado con este usuario.');

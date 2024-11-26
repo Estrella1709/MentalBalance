@@ -17,5 +17,25 @@ class Cita extends Model
         'fecha',
         'hora',
     ];
+
+    public function paciente()
+    {
+        return $this->belongsTo(Paciente::class, 'id_paciente');
+    }
+
+    public function medico()
+    {
+        return $this->belongsTo(Medico::class, 'id_medico');
+    }
+
+    public function tipoCita()
+    {
+        return $this->belongsTo(TipoCita::class, 'id_tipo_cita', 'id');
+    }
+
+    public function estadoCita()
+    {
+        return $this->belongsTo(EstadoCita::class, 'id_estado', 'id');
+    }
 }
 
