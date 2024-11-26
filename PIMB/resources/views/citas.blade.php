@@ -16,7 +16,12 @@
                     <p>Cita con: {{ $cita->medico->user->nombre }} {{ $cita->medico->user->apellidoP }} {{ $cita->medico->user->apellidoM }}</p>
                     <span>Fecha: {{ $cita->fecha }}  Hora: {{ $cita->hora }}</span>
                 </div>
-                <button class="cancel-cita">Cancelar cita</button>
+                <form action="{{ route('citas.destroy', $cita->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas cancelar esta cita?')">
+                @csrf
+                    @method('DELETE')
+                    <button type="submit" class="cancel-cita">Cancelar cita</button>
+                </form>
+
             </div>
         @endforeach
 

@@ -35,5 +35,24 @@ class CitasController extends Controller
 
         return redirect()->route('rutaDirectorio')->with('success', 'Cita solicitada con éxito.');
     }
+
+    public function destroy($id)
+    {
+        $user = auth()->user();
+        $cita = Cita::find($id);
+
+        if (!$cita) {
+            return redirect()->back()->with('error', 'La cita no existe.');
+        }
+
+        // Verifica que la cita pertenezca al paciente autenticado
+        if ($cita->id_paciente != $user->paciente->id) {
+            return redirect()->back()->with('error', 'No puedes cancelar una cita que no te pertenece.');
+        }
+
+        $cita->delete();
+
+        return redirect()->back()->with('success', 'La cita ha sido cancelada exitosamente.');
+    }
 }
 
