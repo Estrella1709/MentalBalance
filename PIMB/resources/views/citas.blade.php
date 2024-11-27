@@ -77,8 +77,8 @@
                 color: '#d32f2f',
                 confirmButtonColor: '#398F9D',
                 cancelButtonColor: '#233abd',
-                confirmButtonText: 'Sí, cerrar sesión',
-                cancelButtonText: 'Cancelar'
+                confirmButtonText: 'Sí, cancelar la cita',
+                cancelButtonText: 'No, no quiero cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire({
