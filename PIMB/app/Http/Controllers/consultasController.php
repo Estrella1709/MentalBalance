@@ -34,6 +34,7 @@ class consultasController extends Controller
         return view('citas', compact('citas'));
     }
 
+
     public function create()
     {
         //

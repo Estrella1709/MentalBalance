@@ -10,6 +10,7 @@ use App\Http\Controllers\controladorInfoEM;
 use App\Http\Controllers\registroController;
 use App\Http\Controllers\consultasController;
 use App\Http\Controllers\CitasController;
+use App\Http\Controllers\TestController;
 
 
 //Rutas de Inicio de sesión:
@@ -36,7 +37,10 @@ Route::get('/', [registroController::class,'index'])->name('rutaHome');
 Route::middleware(['auth'])->group(function () {
     //Rutas de Formulario
     Route::get('/test-salud-mental', [controladorForm::class, 'formulario'])->name('rutaFormulario')->middleware('auth');
-    Route::post('/test-salud-mental', [controladorForm::class, 'enviarTest'])->name('rutaEnviarTest');
+    Route::post('/procesar-test', [TestController::class, 'procesarTest'])->name('rutaEnviarTest');
+    // Ruta para mostrar el pre-diagnóstico
+    Route::get('/mi-pre-diagnostico', [TestController::class, 'mostrarResultadoPreDiagnostico'])->name('rutaPreDiagnostico');
+
 
     //Rutas de Directorio
     Route::get('/directorio', [consultasController::class,'index'])->name('rutaDirectorio');

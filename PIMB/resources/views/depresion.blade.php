@@ -1,4 +1,4 @@
-@extends('layouts.plantilla1')
+@extends(auth()->check() && auth()->user()->id_tipo_usuario == 2 ? 'layouts.plantilla2' : 'layouts.plantilla1')
     @section('contenido')
 
 <link rel="stylesheet" href="{{ asset('css/infoenf.css') }}">
@@ -7,7 +7,9 @@
             <div class="card-body">
                 <h1 class="titulo">Depresión</h1>
                 <text class="content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis rerum amet nihil possimus aliquid ipsam fugiat expedita quaerat quod? Quidem aspernatur commodi consectetur dolore cumque ipsam similique illo unde maxime.
+                La depresión es un trastorno del estado de ánimo que afecta tanto a la mente como al cuerpo. Las personas con depresión sienten una tristeza profunda y persistente que puede durar semanas, meses o incluso años. Además de la tristeza, la depresión puede provocar pérdida de interés en actividades previamente placenteras, fatiga extrema, sentimientos de desesperanza, culpa excesiva y dificultades para concentrarse. En algunos casos, también puede haber pensamientos suicidas. Este trastorno puede ser causado por una combinación de factores genéticos, bioquímicos y ambientales, como el estrés crónico o experiencias traumáticas.
+
+                   
                 </text>
             </div>
         </div>
@@ -21,7 +23,7 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Mantén una rutina diaria para estructurar tu día y evitar caer en la inactividad.
                 </text>
             </div>
         </div>
@@ -29,7 +31,7 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Habla con alguien de confianza o busca terapia profesional.
                 </text>
             </div>
         </div>
@@ -37,12 +39,11 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Haz ejercicio regularmente, ya que mejora el estado de ánimo al liberar endorfinas.
                 </text>
             </div>
         </div>
     </div>
-
     
     <div class="logged-message">
         @auth
@@ -50,12 +51,6 @@
             <h1>¡Consulta con un especialista!</h1>
             <p>
             Contamos con especialistas que te ayudarán a darle un seguimiento más profesional a tu salud mental
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
-            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
-            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-            software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <div class="button-container">
                 <button class="btn-custom">Directorio de especialistas</button>

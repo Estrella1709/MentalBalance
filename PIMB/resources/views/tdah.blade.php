@@ -1,4 +1,4 @@
-@extends('layouts.plantilla1')
+@extends(auth()->check() && auth()->user()->id_tipo_usuario == 2 ? 'layouts.plantilla2' : 'layouts.plantilla1')
     @section('contenido')
 
 <link rel="stylesheet" href="{{ asset('css/infoenf.css') }}">
@@ -7,8 +7,10 @@
             <div class="card-body">
                 <h1 class="titulo">TDAH</h1>
                 <text class="content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis rerum amet nihil possimus aliquid ipsam fugiat expedita quaerat quod? Quidem aspernatur commodi consectetur dolore cumque ipsam similique illo unde maxime.
-                </text>
+                    <p>El Trastorno por Déficit de Atención e Hiperactividad (TDAH) es un trastorno neuropsiquiátrico que afecta principalmente la capacidad de las personas para concentrarse, controlar impulsos y regular su nivel de actividad. Es comúnmente diagnosticado en la infancia, aunque puede persistir en la edad adulta. Las personas con TDAH suelen tener dificultades para mantener la atención en tareas, ser fácilmente distraídas, y pueden mostrar comportamientos impulsivos, como interrumpir conversaciones o tomar decisiones sin pensar en las consecuencias. En algunos casos, también pueden ser hiperactivas, lo que significa que tienen una necesidad constante de moverse.
+
+</p>
+                
             </div>
         </div>
         <div class="img-container">
@@ -21,7 +23,7 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Establece una rutina clara y usa recordatorios visuales para mantener el enfoque.
                 </text>
             </div>
         </div>
@@ -29,7 +31,7 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Divide las tareas en pasos pequeños para evitar sentirse abrumado.
                 </text>
             </div>
         </div>
@@ -37,7 +39,7 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Practica técnicas de manejo de impulsos, como pausas o respiración profunda, antes de tomar decisiones rápidas.
                 </text>
             </div>
         </div>
@@ -50,12 +52,6 @@
             <h1>¡Consulta con un especialista!</h1>
             <p>
             Contamos con especialistas que te ayudarán a darle un seguimiento más profesional a tu salud mental
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
-            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
-            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-            software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <div class="button-container">
                 <button class="btn-custom">Directorio de especialistas</button>

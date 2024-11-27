@@ -2,6 +2,7 @@
     @section('contenido')
 
     <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <div class="card-home">
         <h1 class="bienvenido">¡Conoce más sobre ti!</h1>
@@ -221,4 +222,22 @@
     </div>
     </div>
     <br>
+
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            imageUrl: '{{ asset('img/logo.png')}}',
+            imageWidth: 150,
+            imageHeight: 150,
+            imageAlt: 'Imagen de éxito',
+            title: '<h3 style="color:#398F9D;">¡Operación Exitosa!</h3>',
+            html: `<p style="font-size: 18px; color: #398F9D;">{{ session('success') }}</p>`,
+            confirmButtonText: 'Entendido',
+            background: '#eaf7f8',
+            color: '#7fe2f1',
+            confirmButtonColor: '#398F9D',
+        });
+    </script>
+    @endif
+
 @endsection

@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="card-back">
-                        <p>Información sobre ansiedad...</p>
+                        <p>La andiedad es una respuesta emocional a situaciones estresantes o desconocidas, que se manifiesta con preocupaciones excesivas, nerviosismo o miedo.</p>
                         <button onclick="window.location.href='{{ route('rutaInfoAnsiedad')}}'">Leer más</button>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="card-back">
-                        <p>Información sobre depresión...</p>
+                        <p>Es un trastorno del estado de ánimo caracterizado por tristeza persistente, pérdida de interés en actividades diarias y fatiga extrema.</p>
                         <button onclick="window.location.href='{{ route('rutaInfoDepresion')}}'">Leer más</button>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="card-back">
-                        <p>Información sobre TDAH...</p>
+                        <p>Es un trastorno neuropsiquiátrico caracterizado por dificultades para mantener la atención, impulsividad y, en algunos casos, hiperactividad.</p>
                         <button onclick="window.location.href='{{ route('rutaInfoTDAH')}}'">Leer más</button>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="card-back">
-                        <p>Información sobre bipolaridad...</p>
+                        <p>Es un trastorno del estado de ánimo que causa cambios extremos en el humor, pasando de episodios de euforia (manía) a tristeza profunda (depresión).</p>
                         <button onclick="window.location.href='{{ route('rutaInfoBipolaridad')}}'">Leer más</button>
                     </div>
                 </div>
@@ -92,12 +92,6 @@
             {{ $loggedIn ? 'Realizar Test' : 'Iniciar sesión' }}
         </button>
         
-        <script>
-            document.querySelector('.logout-button').addEventListener('click', function (e) {
-                if (!confirm('¿Estás seguro de que quieres cerrar sesión?')) {
-                    e.preventDefault(); // Si el usuario cancela, no se envía el formulario
-                }
-            });
-        </script>
+        
 
     @endsection

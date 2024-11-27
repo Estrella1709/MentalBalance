@@ -1,4 +1,5 @@
-@extends('layouts.plantilla1')
+@extends(auth()->check() && auth()->user()->id_tipo_usuario == 2 ? 'layouts.plantilla2' : 'layouts.plantilla1')
+
     @section('contenido')
 
 <link rel="stylesheet" href="{{ asset('css/infoenf.css') }}">
@@ -7,7 +8,8 @@
             <div class="card-body">
                 <h1 class="titulo">Ansiedad</h1>
                 <text class="content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis rerum amet nihil possimus aliquid ipsam fugiat expedita quaerat quod? Quidem aspernatur commodi consectetur dolore cumque ipsam similique illo unde maxime.
+                La ansiedad es una emoción natural que todos experimentamos en situaciones de estrés o incertidumbre. Sin embargo, cuando la ansiedad se vuelve excesiva o crónica, puede convertirse en un trastorno. Este trastorno se caracteriza por una preocupación constante e irracional sobre situaciones cotidianas, acompañada de síntomas físicos como palpitaciones, sudoración, temblores, tensión muscular y dificultades para respirar. Los trastornos de ansiedad más comunes incluyen el Trastorno de Ansiedad Generalizada (TAG), los trastornos de pánico, las fobias y la ansiedad social. Las personas con ansiedad pueden sentirse constantemente en alerta, lo que puede interferir con su capacidad para funcionar en la vida diaria.
+
                 </text>
             </div>
         </div>
@@ -21,7 +23,7 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Practica técnicas de relajación como la meditación o la respiración profunda.
                 </text>
             </div>
         </div>
@@ -29,7 +31,7 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Mantén una rutina regular de ejercicio físico para reducir el estrés.
                 </text>
             </div>
         </div>
@@ -37,7 +39,7 @@
             <div class="consejos-body">
                 <h1 class="hconsejos">Consejos</h1>
                 <text class="tconsejos">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora facilis voluptate velit itaque sit amet doloremque, fugiat porro? Illum numquam sunt sed exercitationem commodi ratione eveniet quasi et quaerat ut.
+                Establece límites saludables y busca apoyo social o profesional si es necesario.
                 </text>
             </div>
         </div>
@@ -45,23 +47,17 @@
     
     
     <div class="logged-message">
-        @guest
+        @auth
         
             <h1>¡Consulta con un especialista!</h1>
             <p>
             Contamos con especialistas que te ayudarán a darle un seguimiento más profesional a tu salud mental
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
-            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
-            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-            software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <div class="button-container">
                 <button class="btn-custom">Directorio de especialistas</button>
             </div>
             
-        @endguest
+        @endauth
     </div>
 
 @endsection

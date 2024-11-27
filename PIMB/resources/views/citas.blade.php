@@ -16,7 +16,7 @@
                     <p>Cita con: {{ $cita->medico->user->nombre }} {{ $cita->medico->user->apellidoP }} {{ $cita->medico->user->apellidoM }}</p>
                     <span>Fecha: {{ $cita->fecha }}  Hora: {{ $cita->hora }}</span>
                 </div>
-                <form action="{{ route('citas.destroy', $cita->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas cancelar esta cita?')">
+                <form action="{{ route('citas.destroy', $cita->id) }}" method="POST">
                 @csrf
                     @method('DELETE')
                     <button type="submit" class="cancel-cita">Cancelar cita</button>
@@ -55,4 +55,50 @@
 
 <script src="{{ asset('js/citas.js') }}"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const eliminarBotones = document.querySelectorAll('.cancel-cita');
+
+    eliminarBotones.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault(); // Evita que el formulario se envíe inmediatamente
+
+            const form = this.closest('form');
+
+            Swal.fire({
+                title: '<span style="color:#398F9D;">¿Estás segur@ de que quieres cancelar la cita?</span>',
+                html: `<p style="font-size: 18px; color: #398F9D;">Esta opción no se puede revertir!</p>`,
+                imageUrl: '{{ asset('img/logo.png') }}',
+                imageWidth: 150,
+                imageHeight: 150,
+                imageAlt: 'Imagen de error',
+                showCancelButton: true,
+                background: '#eaf7f8',
+                color: '#d32f2f',
+                confirmButtonColor: '#398F9D',
+                cancelButtonColor: '#233abd',
+                confirmButtonText: 'Sí, cerrar sesión',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        imageUrl: '{{ asset('img/logo.png') }}',
+                        imageWidth: 150,
+                        imageHeight: 150,
+                        imageAlt: 'Imagen de éxito',
+                        title: '<h3 style="color:#398F9D;">Cita cancelada correctamente</h3>',
+                        confirmButtonText: 'Entendido',
+                        background: '#eaf7f8',
+                        color: '#7fe2f1',
+                        confirmButtonColor: '#398F9D',
+                    }).then(() => {
+                        form.submit(); // Ahora sí, se envía el formulario después de la confirmación
+                    });
+                }
+            });
+        });
+    });
+});
+
+</script>
 @endsection
