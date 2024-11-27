@@ -22,18 +22,26 @@ class ValidadorFormulario extends FormRequest
     public function rules()
     {
         return [
-            'q1' => 'required|in:a,b,c,d',
-            'q2' => 'required|in:a,b,c,d',
-            'q3' => 'required|in:a,b,c,d',
-            'q4' => 'required|in:a,b,c,d',
-            'q5' => 'required|in:a,b,c,d',
-            'q6' => 'required|in:a,b,c,d',
-            'q7' => 'required|in:a,b,c,d',
-            'q8' => 'required|in:a,b,c,d',
-            'q9' => 'required|in:a,b,c,d',
-            'q10' => 'required|in:a,b,c,d',
-            'q11' => 'required|in:a,b,c,d',
-            'q12' => 'required|in:a,b,c,d',
+            'q1' => 'required|in:si,no',
+            'q2' => 'required|in:si,no',
+            'q3' => 'required|in:si,no',
+            'q4' => 'required|in:si,no',
+            'q5' => 'required|in:si,no',
+            'q6' => 'required|in:si,no',
+            'q7' => 'required|in:si,no',
+            'q8' => 'required|in:si,no',
+            'q9' => 'required|in:si,no',
+            'q10' => 'required|in:si,no',
+            'q11' => 'required|in:si,no',
+            'q12' => 'required|in:si,no',
+            'q13' => 'required|in:si,no',
+            'q14' => 'required|in:si,no',
+            'q15' => 'required|in:si,no',
+            'q16' => 'required|in:si,no',
+            'q17' => 'required|in:si,no',
+            'q18' => 'required|in:si,no',
+            'q19' => 'required|in:si,no',
+            'q20' => 'required|in:si,no'
         ];
     }
 

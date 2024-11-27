@@ -18,146 +18,202 @@
         <div class="form-title">Test de salud mental</div>
         <x-pregunta
         numero="1"
-        texto="¿Cómo describirías tu nivel de energía en los últimos meses?"
+        texto="Me cuesta mantenerme enfocado en una tarea durante periodos prolongados."
         :opciones="[
-            'a' => 'a) Alta energía constante.',
-            'b' => 'b) Energía fluctuante entre muy alta y muy baja.',
-            'c' => 'c) Baja energía la mayor parte del tiempo.',
-            'd' => 'd) Energía baja con ocasionales subidas de energía.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q1"
     />
 
     <x-pregunta
         numero="2"
-        texto="¿Con qué frecuencia experimentas dificultades para concentrarte?"
+        texto="Tengo problemas para dormir o duermo en exceso. "
         :opciones="[
-            'a' => 'a) Rara vez o nunca.',
-            'b' => 'b) Algunas veces, especialmente en situaciones estresantes.',
-            'c' => 'c) Frecuentemente, siento que mi mente está en otra parte.',
-            'd' => 'd) Casi todo el tiempo, es un reto constante.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q2"
     />
 
     <x-pregunta
     numero="3"
-    texto="¿Te sientes preocupado o ansioso sin motivo aparente?"
+    texto="En momentos de mucha energía, siento que puedo lograr cualquier cosa, incluso lo imposible"
     :opciones="[
-        'a' => 'a) No, solo cuando hay una razón clara.',
-        'b' => 'b) A veces, pero lo gestiono bien.',
-        'c' => 'c) Frecuentemente, y me resulta difícil manejarlo.',
-        'd' => 'd) Constantemente, me domina y me impide funcionar bien.'
+        'si' => 'Si',
+        'no' => 'No'
     ]"
     name="q3"
     />
 
     <x-pregunta
         numero="4"
-        texto="¿Cómo son tus patrones de sueño?"
+        texto="Me siento nervioso o inquieto incluso sin un motivo aparente. "
         :opciones="[
-            'a' => 'a) Regulares y satisfactorios.',
-            'b' => 'b) Dificultades ocasionales para dormir.',
-            'c' => 'c) Despertar en medio de la noche y tener problemas para volver a dormir.',
-            'd' => 'd) Insomnio constante o dormir en exceso.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q4"
     />
 
     <x-pregunta
         numero="5"
-        texto="¿Cómo describirías tu estado de ánimo general?"
+        texto="A menudo actúo sin pensar en las consecuencias, como hablar fuera de turno o interrumpir a otros.  "
         :opciones="[
-            'a' => 'a) Mayormente positivo.',
-            'b' => 'b) Varía entre muy positivo y muy negativo.',
-            'c' => 'c) Persistente sensación de tristeza.',
-            'd' => 'd) Irritable y con cambios de humor repentinos.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q5"
     />
 
     <x-pregunta
         numero="6"
-        texto="¿Con qué frecuencia te sientes abrumado por tus responsabilidades?"
+        texto="Siento tensión muscular, como si siempre estuviera en alerta."
         :opciones="[
-            'a' => 'a) Rara vez, manejo bien mis obligaciones.',
-            'b' => 'b) Algunas veces, pero lo logro controlar.',
-            'c' => 'c) Frecuentemente me siento sobrepasado.',
-            'd' => 'd) Casi siempre, me resulta muy difícil gestionar el día a día.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q6"
     />
 
     <x-pregunta
         numero="7"
-        texto="¿Cómo manejas el estrés?"
+        texto="Me siento fatigado o sin energía, incluso después de descansar."
         :opciones="[
-            'a' => 'a) Encuentro formas saludables de liberarlo.',
-            'b' => 'b) A veces me cuesta, pero lo consigo.',
-            'c' => 'c) Generalmente, me siento agobiado y sin salida.',
-            'd' => 'd) No lo manejo bien, me afecta gravemente.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q7"
     />
 
     <x-pregunta
         numero="8"
-        texto="¿Tienes pensamientos negativos recurrentes?"
+        texto="Durante periodos de alta energía, tengo dificultades para controlar mis impulsos (por ejemplo, gastar dinero excesivamente o hablar demasiado). "
         :opciones="[
-            'a' => 'a) No, solo de vez en cuando y los supero rápidamente.',
-            'b' => 'b) A veces, pero los controlo bien.',
-            'c' => 'c) Frecuentemente, y es difícil detenerlos.',
-            'd' => 'd) Constantemente, son intrusivos y me afectan diariamente.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q8"
     />
 
     <x-pregunta
         numero="9"
-        texto="¿Te resulta difícil disfrutar de las actividades que antes te gustaban?"
+        texto="Me resulta difícil organizar mis actividades o cumplir plazos. "
         :opciones="[
-            'a' => 'a) No, sigo disfrutando de mis pasatiempos.',
-            'b' => 'b) Algunas veces, pero trato de motivarme.',
-            'c' => 'c) Frecuentemente me cuesta encontrar placer en ellas.',
-            'd' => 'd) Ya no disfruto nada de lo que antes me apasionaba.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q9"
     />
 
     <x-pregunta
         numero="10"
-        texto="¿Cómo describirías tu relación con las personas cercanas?"
+        texto="Me culpo a mí mismo por cosas que no puedo controlar."
         :opciones="[
-            'a' => 'a) Muy buena, siento apoyo y conexión.',
-            'b' => 'b) Buena en general, pero con altibajos.',
-            'c' => 'c) A menudo me siento distanciado o incomprendido.',
-            'd' => 'd) Me siento solo y desconectado de los demás.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q10"
     />
 
     <x-pregunta
         numero="11"
-        texto="¿Con qué frecuencia tienes episodios de pérdida de interés o motivación?"
+        texto="Mi estado de ánimo cambia repentinamente, afectando mis relaciones o actividades."
         :opciones="[
-            'a' => 'a) Rara vez, siempre encuentro algo que me motive.',
-            'b' => 'b) Ocasionalmente, pero los supero.',
-            'c' => 'c) Frecuentemente, me cuesta empezar cualquier actividad.',
-            'd' => 'd) Casi todo el tiempo, me siento sin propósito.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q11"
     />
 
     <x-pregunta
         numero="12"
-        texto="¿Sientes algún cambio importante en tu apetito?"
+        texto="Me distraigo por estímulos a mi alrededor, incluso cuando intento concentrarme."
         :opciones="[
-            'a' => 'a) No, mi apetito es regular.',
-            'b' => 'b) Leves cambios, pero sin preocupaciones.',
-            'c' => 'c) He perdido el apetito o como en exceso a menudo.',
-            'd' => 'd) Mi apetito ha cambiado drásticamente y me preocupa.'
+            'si' => 'Si',
+            'no' => 'No'
         ]"
         name="q12"
+    />
+
+    <x-pregunta
+        numero="13"
+        texto="Me preocupo excesivamente por situaciones del futuro que no puedo controlar."
+        :opciones="[
+            'si' => 'Si',
+            'no' => 'No'
+        ]"
+        name="q13"
+    />
+
+    <x-pregunta
+        numero="14"
+        texto="He perdido interés en actividades que antes disfrutaba."
+        :opciones="[
+            'si' => 'Si',
+            'no' => 'No'
+        ]"
+        name="q14"
+    />
+
+    <x-pregunta
+        numero="15"
+        texto="En algunos periodos, me cuesta tanto motivarme que siento que no puedo realizar las tareas más simples. "
+        :opciones="[
+            'si' => 'Si',
+            'no' => 'No'
+        ]"
+        name="q15"
+    />
+
+    <x-pregunta
+        numero="16"
+        texto="Me cuesta concentrarme debido a pensamientos constantes o preocupaciones. "
+        :opciones="[
+            'si' => 'Si',
+            'no' => 'No'
+        ]"
+        name="q16"
+    />
+
+    <x-pregunta
+        numero="17"
+        texto="Tengo problemas para permanecer quieto durante mucho tiempo o siento una necesidad constante de moverme. "
+        :opciones="[
+            'si' => 'Si',
+            'no' => 'No'
+        ]"
+        name="q17"
+    />
+
+    <x-pregunta
+        numero="18"
+        texto="Tengo dificultad para relajarme, incluso cuando estoy en un lugar tranquilo. "
+        :opciones="[
+            'si' => 'Si',
+            'no' => 'No'
+        ]"
+        name="q18"
+    />
+
+    <x-pregunta
+        numero="19"
+        texto="Me siento triste o vacío la mayor parte del tiempo. "
+        :opciones="[
+            'si' => 'Si',
+            'no' => 'No'
+        ]"
+        name="q19"
+    />
+
+    <x-pregunta
+        numero="20"
+        texto="A veces me siento extremadamente enérgico y emocionado, y luego muy triste sin una razón clara. "
+        :opciones="[
+            'si' => 'Si',
+            'no' => 'No'
+        ]"
+        name="q20"
     />
 
         <button type="submit" class="button-center">Enviar Test</button>
